@@ -1,28 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>imd3 - Exercices de manipulation du DOM</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="scss/main.scss" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="l-header">
-      <nav class="l-container">
-        <ul>
-          <li><a href="index.html">Sélecteurs JavaScript</a></li>
-          <li><a href="#">Modification des class (?)</a></li>
-          <li><a href="#">Ecouteurs d'événement</a></li>
-        </ul>
-      </nav>
-    </header>
-
+<extends src="partials/base-layout.html">
+  <block name="content">
     <main class="l-container">
       <h1 class="l-page-title">Exercices - Sélecteurs JavaScript</h1>
 
@@ -135,7 +112,7 @@ document.querySelector('.unwanted').remove();</code></pre>
         </div>
       </section>
 
-      <section class="exercices-container">
+      <section class="exercices-container" id="exercice-1">
         <article class="pizza" id="pizza-margherita">
           <h2>1</h2>
           <p>🍕</p>
@@ -194,10 +171,11 @@ document.querySelector('.unwanted').remove();</code></pre>
 
     <footer class="l-footer">
       <div class="l-container">
-        <p>Prochain exercice ➡️ <a href="#">Qqch</a></p>
+        <p>
+          Prochain exercice ➡️
+          <a href="classlist.html">Modification des classes</a>
+        </p>
       </div>
     </footer>
-
-    <script src="js/main.js" type="module"></script>
-  </body>
-</html>
+  </block>
+</extends>
