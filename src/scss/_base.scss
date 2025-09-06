@@ -1,3 +1,12 @@
+:root {
+  --color-text-main: #333;
+  --color-code-bg: rgb(2, 2, 54);
+  --color-code-content: rgb(248, 234, 199);
+  --color-theory: #0f527e;
+  --color-theory-bg: #f9f9f9;
+  --color-code: #e8e8e8;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,4 +20,15 @@ a {
 img,
 video {
   display: block;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  color: var(--color-text-main);
+}
+
+p {
+  font-size: 1.125rem;
+  padding: 0;
+  margin: 0;
 }

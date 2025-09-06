@@ -1,0 +1,39 @@
+.exercices-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 1.5rem;
+  margin: 4rem auto;
+  padding-bottom: 7rem;
+
+  article {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    min-height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+      margin: 0 0 10px 0;
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 3em;
+      margin: 0;
+    }
+  }
+
+  .pizza {
+    border-color: #ff6b35;
+    background: #fff5f0;
+  }
+
+  .broccoli {
+    border-color: #4caf50;
+    background: #f0fff0;
+  }
+}
