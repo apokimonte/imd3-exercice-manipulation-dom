@@ -1,24 +1,25 @@
 <extends src="partials/base-layout.html">
   <block name="content">
-    <main class="l-container">
-      <h1 class="l-page-title">Exercices - Sélecteurs JavaScript</h1>
+    <div class="l-main">
+      <main class="l-container">
+        <h1 class="l-page-title">Exercices - Sélecteurs JavaScript</h1>
 
-      <section class="section-theory">
-        <h2>Rappel théorique</h2>
+        <section class="section-theory">
+          <h2>Rappel théorique</h2>
 
-        <h3>La méthode querySelector()</h3>
-        <p>
-          La méthode <code>querySelector()</code> permet de sélectionner le
-          <strong>premier élément</strong> correspondant au sélecteur CSS
-          spécifié.
-        </p>
-        <pre><code>// Syntaxe générale
+          <h3>La méthode querySelector()</h3>
+          <p>
+            La méthode <code>document.querySelector()</code> permet de
+            sélectionner le <strong>premier élément</strong> correspondant au
+            sélecteur CSS spécifié.
+          </p>
+          <pre><code>// Syntaxe générale
 document.querySelector('sélecteur-CSS');</code></pre>
 
-        <h3>Types de sélecteurs disponibles</h3>
+          <h3>Types de sélecteurs disponibles</h3>
 
-        <h4>Sélecteurs de base</h4>
-        <pre><code>// Par balise
+          <h4>Sélecteurs de base</h4>
+          <pre><code>// Par balise
 document.querySelector('div');
 
 // Par classe CSS
@@ -31,8 +32,8 @@ document.querySelector('#my-id');
 document.querySelector('*');
 </code></pre>
 
-        <h4>Sélecteurs d'attributs</h4>
-        <pre><code>// Élément avec un attribut spécifique
+          <h4>Sélecteurs d'attributs</h4>
+          <pre><code>// Élément avec un attribut spécifique
 document.querySelector('[data-type]');
 
 // Attribut avec une valeur précise
@@ -41,8 +42,8 @@ document.querySelector('[data-type="pizza"]');
 // Attribut contenant une valeur
 document.querySelector('[class*="special"]');</code></pre>
 
-        <h4>Pseudo-classes</h4>
-        <pre><code>// Premier enfant
+          <h4>Pseudo-classes</h4>
+          <pre><code>// Premier enfant
 document.querySelector('ul:first-child');
 
 // Nième enfant
@@ -51,8 +52,8 @@ document.querySelector('ul:nth-child(3)');
 // Dernier enfant
 document.querySelector('ul:last-child');</code></pre>
 
-        <h4>Combinateurs</h4>
-        <pre><code>// Descendant
+          <h4>Combinateurs</h4>
+          <pre><code>// Descendant
 document.querySelector('.container .item');
 
 // Enfant direct
@@ -61,113 +62,126 @@ document.querySelector('.container > .item');
 // Frère adjacent
 document.querySelector('.item + .next');</code></pre>
 
-        <h3>La méthode remove()</h3>
-        <p>
-          La méthode <code>remove()</code> supprime définitivement l'élément du
-          DOM.
-        </p>
-        <pre><code>// Sélectionner puis supprimer
+          <h3>La méthode remove()</h3>
+          <p>
+            La méthode <code>.remove()</code> supprime définitivement l'élément
+            du DOM.
+          </p>
+          <pre><code>// Sélectionner puis supprimer
 const element = document.querySelector('.unwanted');
 element.remove();
 
 // En une ligne
 document.querySelector('.unwanted').remove();</code></pre>
 
-        <p>
-          <strong>⚠️ Attention :</strong> Une fois supprimé, l'élément ne peut
-          pas être récupéré !
-        </p>
-
-        <h3>Différence querySelector() vs querySelectorAll()</h3>
-        <ul>
-          <li>
-            <code>querySelector()</code> : retourne le
-            <strong>premier</strong> élément trouvé ou <code>null</code>
-          </li>
-          <li>
-            <code>querySelectorAll()</code> : retourne <strong>tous</strong> les
-            éléments correspondants dans une NodeList
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <div class="l-content-wrapper">
-          <h2 class="l-h2">Consigne</h2>
           <p>
-            Sélectionnez les éléments indésirables (brocolis) avec la méthode
-            <code>querySelector()</code> puis éradiquez-les un par un avec la
-            méthode <code>remove()</code>.
+            <strong>⚠️ Attention :</strong> Une fois supprimé, l'élément ne peut
+            pas être récupéré !
           </p>
-          <p>
-            Chaque sélecteur ne peut être utilisé qu'une fois, même si sa valeur
-            change.
-          </p>
-        </div>
-        <div class="l-content-wrapper">
-          <h2 class="l-h2">Exemple</h2>
-          <pre><code
+
+          <h3>Différence querySelector() vs querySelectorAll()</h3>
+          <ul>
+            <li>
+              <code>querySelector()</code> : retourne le
+              <strong>premier</strong> élément trouvé ou <code>null</code>
+            </li>
+            <li>
+              <code>querySelectorAll()</code> : retourne
+              <strong>tous</strong> les éléments correspondants dans une
+              NodeList
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <div class="l-content-wrapper">
+            <h2 class="l-h2">Consigne</h2>
+            <p>
+              Depuis <code>js/main.js</code>, écrivez le code JavaScript pour
+              sélectionner les éléments indésirables (brocolis) avec la méthode
+              <code>querySelector()</code> puis éradiquez-les un par un avec la
+              méthode <code>remove()</code>.
+            </p>
+            <p>
+              <b
+                >Chaque sélecteur ne peut être utilisé qu'une fois, même si sa
+                valeur change.</b
+              >
+            </p>
+          </div>
+          <div class="l-content-wrapper">
+            <h2 class="l-h2">Exemple</h2>
+            <pre><code
           >// document.querySelector('.pizza').remove(); // Oh non 😱 ! Ça marche mais j'ai supprimé une pizza !!!</code
         ></pre>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <section class="exercices-container" id="exercice-1">
-        <article class="pizza" id="pizza-margherita">
-          <h2>1</h2>
-          <p>🍕</p>
-        </article>
+        <section class="exercices-container" id="exercice-1">
+          <article class="pizza" id="pizza-margherita">
+            <h2>1</h2>
+            <p>🍕</p>
+          </article>
 
-        <article class="broccoli" data-vegetable="broccoli">
-          <h2>2</h2>
-          <p>🥦</p>
-        </article>
+          <article class="broccoli" data-vegetable="broccoli">
+            <h2>2</h2>
+            <p>🥦</p>
+          </article>
 
-        <article class="pizza special-offer" data-type="pizza" data-price="12">
-          <h2>3</h2>
-          <p>🍕</p>
-        </article>
+          <article
+            class="pizza special-offer"
+            data-type="pizza"
+            data-price="12"
+          >
+            <h2>3</h2>
+            <p>🍕</p>
+          </article>
 
-        <article class="broccoli healthy-food" id="green-veggie">
-          <h2>4</h2>
-          <p>🥦</p>
-        </article>
+          <article class="broccoli healthy-food" id="green-veggie">
+            <h2>4</h2>
+            <p>🥦</p>
+          </article>
 
-        <article class="pizza" data-type="pizza" data-topping="pepperoni">
-          <h2>5</h2>
-          <p>🍕</p>
-        </article>
+          <article class="pizza" data-type="pizza" data-topping="pepperoni">
+            <h2>5</h2>
+            <p>🍕</p>
+          </article>
 
-        <article class="broccoli" data-vegetable="broccoli" data-organic="true">
-          <h2>6</h2>
-          <p>🥦</p>
-        </article>
+          <article
+            class="broccoli"
+            data-vegetable="broccoli"
+            data-organic="true"
+          >
+            <h2>6</h2>
+            <p>🥦</p>
+          </article>
 
-        <article class="pizza deluxe" data-price="15" id="pizza-deluxe">
-          <h2>7</h2>
-          <p>🍕</p>
-        </article>
+          <article class="pizza deluxe" data-price="15" id="pizza-deluxe">
+            <h2>7</h2>
+            <p>🍕</p>
+          </article>
 
-        <article class="broccoli steamed" data-cooking="steamed">
-          <h2>8</h2>
-          <p>🥦</p>
-        </article>
+          <article class="broccoli steamed" data-cooking="steamed">
+            <h2>8</h2>
+            <p>🥦</p>
+          </article>
 
-        <article class="pizza" data-type="pizza" data-size="large">
-          <h2>9</h2>
-          <p>🍕</p>
-        </article>
+          <article class="pizza" data-type="pizza" data-size="large">
+            <h2>9</h2>
+            <p>🍕</p>
+          </article>
 
-        <article
-          class="broccoli raw-food"
-          data-vegetable="broccoli"
-          id="last-broccoli"
-        >
-          <h2>10</h2>
-          <p>🥦</p>
-        </article>
-      </section>
-    </main>
+          <article
+            class="broccoli raw-food"
+            data-vegetable="broccoli"
+            id="last-broccoli"
+          >
+            <h2>10</h2>
+            <p>🥦</p>
+          </article>
+        </section>
+      </main>
+    </div>
 
     <footer class="l-footer">
       <div class="l-container">

@@ -1,26 +1,27 @@
 <extends src="partials/base-layout.html">
   <block name="content">
-    <main class="l-container">
-      <h1 class="l-page-title">Exercices - Ecouteurs d'événement</h1>
+    <div class="l-main">
+      <main class="l-container">
+        <h1 class="l-page-title">Exercices - Ecouteurs d'événement</h1>
 
-      <section class="section-theory">
-        <h2>Rappel théorique</h2>
+        <section class="section-theory">
+          <h2>Rappel théorique</h2>
 
-        <h3>Les événements en JavaScript</h3>
-        <p>
-          Les événements permettent de détecter et réagir aux interactions de
-          l'utilisateur (clics, saisie clavier, mouvements de souris, etc.) ou
-          aux changements dans le navigateur.
-        </p>
+          <h3>Les événements en JavaScript</h3>
+          <p>
+            Les événements permettent de détecter et réagir aux interactions de
+            l'utilisateur·trice (clics, saisie clavier, mouvements de souris,
+            etc.) ou aux changements dans le navigateur.
+          </p>
 
-        <h3>La méthode addEventListener()</h3>
+          <h3>La méthode addEventListener()</h3>
 
-        <p>
-          <code>addEventListener()</code> est la méthode recommandée pour
-          écouter les événements. Elle permet d'attacher une fonction à un
-          événement spécifique.
-        </p>
-        <pre><code>// Syntaxe générale
+          <p>
+            <code>.addEventListener()</code> est la méthode recommandée pour
+            écouter les événements. Elle permet d'attacher une fonction à un
+            événement spécifique.
+          </p>
+          <pre><code>// Syntaxe générale
 element.addEventListener('typeEvenement', function() {
     // Code à exécuter
 });
@@ -30,9 +31,11 @@ document.querySelector('.my-button').addEventListener('click', function() {
     console.log('Bouton cliqué !');
 });</code></pre>
 
-        <h3>Types d'événements courants</h3>
-        <h4>Événements de souris</h4>
-        <pre><code>// Clic simple
+          <h3>Types d'événements courants</h3>
+          <h4>Événements de souris</h4>
+          <pre><code>const element = document.querySelector(".my-element");
+
+// Clic simple
 element.addEventListener('click', function() { });
 
 // Survol
@@ -44,8 +47,8 @@ element.addEventListener('mouseleave', function() { });
 // Mouvement de souris
 element.addEventListener('mousemove', function() { });</code></pre>
 
-        <h4>Événements de clavier</h4>
-        <pre><code>// Touche enfoncée
+          <h4>Événements de clavier</h4>
+          <pre><code>// Touche enfoncée
 document.addEventListener('keydown', function() { });
 
 // Touche relâchée
@@ -58,8 +61,10 @@ document.addEventListener('keydown', function(event) {
     }
 });</code></pre>
 
-        <h4>Événements de formulaire</h4>
-        <pre><code>// Focus sur un champ
+          <h4>Événements de formulaire</h4>
+          <pre><code>const input = document.querySelector("input");
+          
+// Focus sur un champ
 input.addEventListener('focus', function() { });
 
 // Perte de focus
@@ -71,8 +76,8 @@ input.addEventListener('change', function() { });
 // Saisie en temps réel
 input.addEventListener('input', function() { });</code></pre>
 
-        <h4>Événements de fenêtre</h4>
-        <pre><code>// Redimensionnement de fenêtre
+          <h4>Événements de fenêtre</h4>
+          <pre><code>// Redimensionnement de fenêtre
 window.addEventListener('resize', function() { });
 
 // Défilement de page
@@ -80,122 +85,123 @@ window.addEventListener('scroll', function() { });
 
 // Chargement de page
 window.addEventListener('load', function() { });</code></pre>
-      </section>
+        </section>
 
-      <section>
-        <div class="l-content-wrapper">
-          <h2 class="l-h2">Consigne</h2>
-          <p>
-            Ajouter la classe <code>.highlight</code> sur la carte concernée en
-            fonction de l'événement indiqué
-          </p>
-        </div>
-        <div class="l-content-wrapper">
-          <h2 class="l-h2">Exemple</h2>
-          <pre><code
+        <section>
+          <div class="l-content-wrapper">
+            <h2 class="l-h2">Consigne</h2>
+            <p>
+              Ajouter la classe <code>.highlight</code> sur chaque carte en
+              fonction de l'événement indiqué
+            </p>
+          </div>
+          <div class="l-content-wrapper">
+            <h2 class="l-h2">Exemple</h2>
+            <pre><code
           >
           const myElement = document.querySelector('.my-element');
           const btn = document.querySelector('.my-element .btn');
 
           btn.addEventListener("click", function() {
             myElement.classList.add("highlight");
-          })
+          });
           </code
         ></pre>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <section class="exercices-container" id="exercice-3">
-        <article class="item" id="exercice-3-1">
-          <h2>1</h2>
-          <p>Clic</p>
-          <p class="small">Activer au clic sur la carte</p>
-        </article>
+        <section class="exercices-container" id="exercice-3">
+          <article class="item" id="exercice-3-1">
+            <h2>1</h2>
+            <p>Clic</p>
+            <p class="small">ajouter au clic sur la carte</p>
+          </article>
 
-        <article class="item" id="exercice-3-2">
-          <h2>2</h2>
-          <button>Cliquez-ici</button>
-          <p class="small">activer / désactiver au clic sur le bouton</p>
-        </article>
+          <article class="item" id="exercice-3-2">
+            <h2>2</h2>
+            <button>Cliquez-ici</button>
+            <p class="small">ajouter / supprimer au clic sur le bouton</p>
+          </article>
 
-        <article class="item" id="exercice-3-3">
-          <h2>3</h2>
-          <p>Survol</p>
-          <p class="small">
-            activer au survol / désactiver à la sortie du survol (2 événements)
-          </p>
-        </article>
+          <article class="item" id="exercice-3-3">
+            <h2>3</h2>
+            <p>Survol</p>
+            <p class="small">
+              ajouter au survol / supprimer à la sortie du survol (2 événements)
+            </p>
+          </article>
 
-        <article class="item" id="exercice-3-4">
-          <h2>4</h2>
-          <p>Mouvement</p>
-          <p class="small">
-            activer lors du mouvement de la souris sur le document
-          </p>
-        </article>
+          <article class="item" id="exercice-3-4">
+            <h2>4</h2>
+            <p>Mouvement</p>
+            <p class="small">
+              ajouter lors du mouvement de la souris sur le document
+            </p>
+          </article>
 
-        <article class="item" id="exercice-3-5">
-          <h2>5</h2>
-          <p>scroll</p>
-          <p class="small">activer lors du scroll sur le document (DOM)</p>
-        </article>
+          <article class="item" id="exercice-3-5">
+            <h2>5</h2>
+            <p>scroll</p>
+            <p class="small">ajouter lors du scroll sur le document (DOM)</p>
+          </article>
 
-        <article class="item" id="exercice-3-6">
-          <h2>6</h2>
-          <p>key down</p>
-          <p class="small">
-            activer lors de l'enfoncement d'une touche de clavier
-          </p>
-        </article>
+          <article class="item" id="exercice-3-6">
+            <h2>6</h2>
+            <p>key down</p>
+            <p class="small">
+              ajouter lors de l'enfoncement d'une touche de clavier
+            </p>
+          </article>
 
-        <article class="item" id="exercice-3-7">
-          <h2>7</h2>
-          <p>resize</p>
-          <p class="small">
-            activer lors du redimensionnement de la fenêtre du navigateur
-          </p>
-        </article>
+          <article class="item" id="exercice-3-7">
+            <h2>7</h2>
+            <p>resize</p>
+            <p class="small">
+              ajouter lors du redimensionnement de la fenêtre du navigateur
+            </p>
+          </article>
 
-        <h2 class="l-h2 title-advanced">Exercices avancés (optionnel)</h2>
+          <h2 class="l-h2 title-advanced">Exercices avancés (optionnel)</h2>
 
-        <article class="item" id="exercice-3-8">
-          <h2>8</h2>
-          <p>key down "f"</p>
-          <p class="small">
-            activer lors de l'enfoncement de la touche "f" du clavier
-          </p>
-        </article>
+          <article class="item" id="exercice-3-8">
+            <h2>8</h2>
+            <p>key down "f"</p>
+            <p class="small">
+              ajouter lors de l'enfoncement de la touche "f" du clavier
+            </p>
+          </article>
 
-        <article class="item" id="exercice-3-9">
-          <h2>9</h2>
-          <input type="date" />
-          <p class="small">
-            activer lors du focus / désactiver lors du blur sur le champ (2
-            événements)
-          </p>
-        </article>
+          <article class="item" id="exercice-3-9">
+            <h2>9</h2>
+            <input type="date" />
+            <p class="small">
+              ajouter lors du focus / supprimer lors du blur sur le champ (2
+              événements)
+            </p>
+          </article>
 
-        <article class="item" id="exercice-3-10">
-          <h2>10</h2>
-          <input type="text" placeholder="Saisir ici" />
-          <p class="small">activer lors de la saisie dans le champ</p>
-        </article>
+          <article class="item" id="exercice-3-10">
+            <h2>10</h2>
+            <input type="text" placeholder="Saisir ici" />
+            <p class="small">ajouter lors de la saisie dans le champ</p>
+          </article>
 
-        <article class="item" id="exercice-3-11">
-          <h2>11</h2>
-          <input type="range" min="-5" max="5" step="1" />
-          <p class="small">activer après le déplacement du curseur range</p>
-        </article>
+          <article class="item" id="exercice-3-11">
+            <h2>11</h2>
+            <input type="range" min="-5" max="5" step="1" />
+            <p class="small">ajouter après le déplacement du curseur range</p>
+          </article>
 
-        <article class="item" id="exercice-3-12">
-          <h2>12</h2>
-          <input type="color" value="#000000" />
-          <p class="small">
-            activer lorsque la couleur rouge est sélectionnée (#ff0000)
-          </p>
-        </article>
-      </section>
-    </main>
+          <article class="item" id="exercice-3-12">
+            <h2>12</h2>
+            <input type="color" value="#000000" />
+            <p class="small">
+              ajouter lorsque la couleur rouge est sélectionnée (#ff0000)
+            </p>
+          </article>
+        </section>
+      </main>
+    </div>
 
     <footer class="l-footer">
       <div class="l-container">

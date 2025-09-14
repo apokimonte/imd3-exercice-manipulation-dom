@@ -1,9 +1,8 @@
 .exercices-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1fr;
+  gap: 1rem;
 
-  gap: 1.5rem;
-  margin: 4rem auto;
   padding-bottom: 7rem;
 
   article {
@@ -35,9 +34,23 @@
   }
 }
 
+@media (min-width: 556px) {
+  .exercices-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .exercices-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
 .title-advanced {
   margin-top: 3rem;
-  grid-column: 1/6;
+  grid-column: 1 / -1;
 }
 
 #exercice-1 {
